@@ -24,10 +24,15 @@ namespace Infraestructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Age")
+                    b.Property<int>("Age")
                         .HasMaxLength(45)
-                        .HasColumnType("varchar(45)")
+                        .HasColumnType("int")
                         .HasColumnName("age");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");

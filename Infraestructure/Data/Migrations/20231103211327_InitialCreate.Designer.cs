@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Data.Migrations
 {
     [DbContext(typeof(DbFirstContext))]
-    [Migration("20231103210604_InitialCreate")]
+    [Migration("20231103211327_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -27,10 +27,15 @@ namespace Infraestructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Age")
+                    b.Property<int>("Age")
                         .HasMaxLength(45)
-                        .HasColumnType("varchar(45)")
+                        .HasColumnType("int")
                         .HasColumnName("age");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");

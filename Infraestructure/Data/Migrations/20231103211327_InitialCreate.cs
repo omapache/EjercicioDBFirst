@@ -20,8 +20,9 @@ namespace Infraestructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    age = table.Column<string>(type: "varchar(45)", maxLength: 45, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    age = table.Column<int>(type: "int", maxLength: 45, nullable: false)
                 },
                 constraints: table =>
                 {
