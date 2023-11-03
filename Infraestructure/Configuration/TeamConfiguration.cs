@@ -18,27 +18,6 @@ public class TeamConfiguration : IEntityTypeConfiguration<Team>
             .HasMaxLength(50)
             .HasColumnName("name");
 
-
-        /* builder.HasMany(d => d.Drivers)
-                .WithMany(p => p.Teams)
-                .UsingEntity<Teamdriver>(
-                    
-                    r => r.HasOne<Driver>().WithMany()
-                        .HasForeignKey("IdDriver")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("IdDriver"),
-                    l => l.HasOne<Team>().WithMany()
-                        .HasForeignKey("IdTeam")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("IdTeam"),
-                    j =>
-                    {
-                        j.HasKey("IdTeam", "IdDriver")
-                            .HasName("PRIMARY")
-                            .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-                        j.ToTable("teamdriver");
-                        j.HasIndex(new[] { "IdDriver" }, "IdDriver_idx");
-                    }); */
         builder
         .HasMany(p => p.Drivers)
         .WithMany(p => p.Teams)

@@ -12,6 +12,10 @@ public class DriverConfiguration : IEntityTypeConfiguration<Driver>
 
         builder.ToTable("driver");
 
+        builder.Property(e => e.Name)
+            .HasMaxLength(50)
+            .HasColumnName("name");
+        
         builder.Property(e => e.Age)
             .HasMaxLength(45)
             .HasColumnName("age");
